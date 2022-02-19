@@ -11,9 +11,9 @@ class Stream extends StatefulWidget {
   _StreamState createState() => _StreamState();
 }
 
-const supabaseUrl = 'https://vonjmrysdwuoatfdhtpu.supabase.co';
+const supabaseUrl = 'https://zdrugsiahakcjziytpne.supabase.co';
 const supabaseKey =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZvbmptcnlzZHd1b2F0ZmRodHB1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDUyMjg4MjEsImV4cCI6MTk2MDgwNDgyMX0.tTQPjsUc5BFcFQOjfS2e-knEmMns8RjTCOZVty-1nGE';
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpkcnVnc2lhaGFrY2p6aXl0cG5lIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDUyMzQ0NTcsImV4cCI6MTk2MDgxMDQ1N30.pg5mZrfxudgMDF91iLG1ANIVgBbnSFKCUqgWMCwZoac';
 
 final client = SupabaseClient(supabaseUrl, supabaseKey);
 
