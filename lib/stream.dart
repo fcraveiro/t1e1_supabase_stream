@@ -11,8 +11,9 @@ class Stream extends StatefulWidget {
   _StreamState createState() => _StreamState();
 }
 
-const supabaseUrl = '';
-const supabaseKey = '';
+const supabaseUrl = 'https://pfadasbrbkwhqcecijnp.supabase.co';
+const supabaseKey =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBmYWRhc2JyYmt3aHFjZWNpam5wIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDUzODMxMTYsImV4cCI6MTk2MDk1OTExNn0.LUQhDSpu3PzeahG7rCjxKXVffo0FUYgxQ5jq47vMbc0';
 
 final client = SupabaseClient(supabaseUrl, supabaseKey);
 
@@ -27,6 +28,9 @@ class _StreamState extends State<Stream> {
         title: const Text('Mensagens'),
         centerTitle: true,
         backgroundColor: const Color(0xFF48426D),
+        actions: [
+          GestureDetector(onTap: () => marca(), child: const Icon(Icons.add)),
+        ],
       ),
       body: Center(
         child: Padding(
@@ -88,4 +92,18 @@ class _StreamState extends State<Stream> {
       ),
     );
   }
+}
+
+marca() async {
+  final campos = ClassStream(
+    streamUuId: '',
+    streamNome: 'Novo',
+  );
+  Map<String, dynamic> dadosJson = campos.toJson();
+  log(dadosJson.toString());
+  await client.from('aula').insert(dadosJson).execute().then(
+        (value) => log(
+          value.error.toString(),
+        ),
+      );
 }
